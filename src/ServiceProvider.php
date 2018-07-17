@@ -12,7 +12,7 @@ class ServiceProvider extends Provider
      */
     public function boot()
     {
-        TestResponse::macro('assertMatchesJsonSchema', function ($schema) {
+        TestResponse::macro('assertJsonSchema', function ($schema) {
             (new SchemaAssertion($schema))->assert($this->content());
         });
     }
