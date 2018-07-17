@@ -19,7 +19,7 @@ class AssertResponseTest extends TestCase
     }
 
     /** @test */
-    public function valid_schema_passes()
+    public function valid_schema_passes_as_json()
     {
         $schema = [
              'type' => 'object',
@@ -33,7 +33,32 @@ class AssertResponseTest extends TestCase
              ],
        ];
 
-        $this->get('foo')->assertMatchesJsonSchema(json_encode($schema));
+        $this->get('foo')->assertJsonSchema(json_encode($schema));
+    }
+
+    /** @test */
+    public function valid_schema_passes_as_array()
+    {
+        $schema = [
+             'type' => 'object',
+             'properties' => [
+               'foo' => [
+                 'type' => 'string',
+               ],
+             ],
+             'required' => [
+               'foo',
+             ],
+       ];
+
+        $this->get('foo')->assertJsonSchema($schema);
+    }
+
+    /** @test */
+    public function valid_schema_passes_as_file_path()
+    {
+        $this->get('foo')
+             ->assertJsonSchema(__DIR__.'/Support/Schemas/foo.json');
     }
 
     /** @test */
@@ -53,6 +78,6 @@ class AssertResponseTest extends TestCase
              ],
        ];
 
-        $this->get('foo')->assertMatchesJsonSchema(json_encode($schema));
+        $this->get('foo')->assertJsonSchema(json_encode($schema));
     }
 }

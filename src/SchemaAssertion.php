@@ -10,9 +10,17 @@ class SchemaAssertion
 {
     protected $schema;
 
-    public function __construct(string $schema)
+    public function __construct($schema)
     {
-        $this->schema = Schema::import(json_decode($schema));
+        if (is_array($schema)) {
+            $schema = json_encode($schema);
+        }
+
+        if (is_string($schema) && $this->isJson($schema)) {
+            $schema = json_decode($schema);
+        }
+
+        $this->schema = Schema::import($schema);
     }
 
     public function assert(string $data)
@@ -24,5 +32,12 @@ class SchemaAssertion
         }
 
         PHPUnit::assertTrue(true);
+    }
+
+    public function isJson($schema)
+    {
+        json_decode($schema);
+
+        return json_last_error() === JSON_ERROR_NONE;
     }
 }

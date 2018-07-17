@@ -37,7 +37,11 @@ public function it_has_a_valid_response()
 
     $response = $this->get('/foo');
 
-    $response->assertMatchesJsonSchema(json_encode($schema));
+    // Schema as an array
+    $response->assertJsonSchema($schema);
+
+    // Schema from a file
+    $response->assertJsonSchema(base_path('schemas/foo.json'));
 }
 ```
 
@@ -56,7 +60,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Code Style
-In addition to the php-cs-fixer rules, StyleCI will apply the [Laravel preset](https://docs.styleci.io/presets#laravel). 
+In addition to the php-cs-fixer rules, StyleCI will apply the [Laravel preset](https://docs.styleci.io/presets#laravel).
 
 ### Linting
 ```bash
