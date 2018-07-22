@@ -13,8 +13,6 @@ class SchemaAssertion
 
     /**
      * @param  array|string  $schema
-     *
-     * @return void
      */
     public function __construct($schema)
     {
@@ -22,8 +20,12 @@ class SchemaAssertion
             $schema = json_encode($schema);
         }
 
-        if (is_string($schema) && Str::isJson($schema)) {
+        if ($this->isJson($schema)) {
             $schema = json_decode($schema);
+        }
+
+        if ($this->isFileFromConfigPath($schema)) {
+            $schema = $this->mergeConfigPath($schema);
         }
 
         $this->schema = Schema::import($schema);
@@ -45,5 +47,45 @@ class SchemaAssertion
         }
 
         PHPUnit::assertTrue(true);
+    }
+
+    /**
+     * Test if the schema is a JSON string.
+     *
+     * @param  mixed  $schema
+     *
+     * @return bool
+     */
+    private function isJson($schema)
+    {
+        return is_string($schema) && Str::isJson($schema);
+    }
+
+    /**
+     * Test if the schema is being loaded from the config path.
+     *
+     * @param  mixed  $schema
+     *
+     * @return bool
+     */
+    private function isFileFromConfigPath($schema)
+    {
+        return is_string($schema)
+            && file_exists($this->mergeConfigPath($schema));
+    }
+
+    /**
+     * Merge the provided path with the config path and file extension.
+     *
+     * @param  string  $schema
+     *
+     * @return string
+     */
+    private function mergeConfigPath($schema)
+    {
+        return vsprintf('%s/%s.json', [
+            config('json-schema-assertions.schema_base_path'),
+            $schema,
+        ]);
     }
 }
