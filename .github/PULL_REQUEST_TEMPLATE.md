@@ -1,5 +1,5 @@
 ## Status
-**READY/IN DEVELOPMENT/HOLD**
+**READY/WIP/HOLD**
 
 ## Description
 A few sentences describing the overall goals of the pull request's commits.
@@ -16,14 +16,15 @@ other_pr_master | [link]()
 ## Todos
 - [ ] Tests
 - [ ] Documentation
+- [ ] Changelog Entry (unreleased)
 
 ## Steps to Test or Reproduce
 Outline the steps to test or reproduce the PR here.
 
 ```bash
 > git pull --prune
-> git checkout <feature_branch>
+> git checkout <branch>
 > vendor/bin/phpunit
 ```
 
-1. 
+1.
