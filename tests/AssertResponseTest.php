@@ -80,4 +80,10 @@ class AssertResponseTest extends TestCase
 
         $this->get('foo')->assertJsonSchema(json_encode($schema));
     }
+
+    /** @test */
+    public function valid_schema_passes_as_config_path()
+    {
+        $this->get('foo')->assertJsonSchema('foo');
+    }
 }

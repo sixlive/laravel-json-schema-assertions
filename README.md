@@ -17,7 +17,53 @@ You can install the package via composer:
 > composer require sixlive/laravel-json-schema-assertions
 ```
 
+This package uses Laravel's [package discovery](https://laravel.com/docs/5.6/packages#package-discovery) to register the service provider to the framework. If you are using an older version of Laravel or do not use package discovery see below.
+
+<details>
+    <summary>Provider registration</summary>
+
+```php
+// config/app.php
+
+'providers' => [
+    sixlive\Laravel\JsonSchemaAssertions\ServiceProvider::class,
+]
+```
+
+</details>
+
+### Configuration
+Publish the packages config file:
+```bash
+> php artisan vendor:publish --provider="sixlive\Laravel\JsonSchemaAssertions\ServiceProvider" --tag="config"
+```
+
+This is the contents of the file which will be published at `config/json-schema-assertions`:
+```php
+return [
+    'schema_base_path' => base_path('schemas'),
+];
+```
+
 ## Usage
+
+If you are making use of external schema refrences e.g. `$ref: 'bar.json`, you mush reference the schema through file path or using the config path resolution.
+
+```
+├── app
+├── bootstrap
+├── config
+├── database
+├── public
+├── resources
+├── routes
+├── schemas
+│   ├── bar.json
+│   └── foo.json
+├── storage
+├── tests
+└── vendor
+```
 
 ```php
 /** @test */
@@ -40,8 +86,17 @@ public function it_has_a_valid_response()
     // Schema as an array
     $response->assertJsonSchema($schema);
 
+    // Schema from raw JSON
+    $response->assertJsonSchema(json_encode($schema));
+
     // Schema from a file
     $response->assertJsonSchema(base_path('schemas/foo.json'));
+
+    // Schema from config path
+    $response->assertJsonSchema('foo');
+
+    // Remote schema
+    $response->assertJsonSchema('https://docs.foo.io/schemas/foo.json');
 }
 ```
 

@@ -10,4 +10,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [ServiceProvider::class];
     }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set(
+            'json-schema-assertions.schema_base_path',
+            __DIR__.'/Support/Schemas'
+        );
+    }
 }

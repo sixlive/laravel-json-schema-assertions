@@ -12,8 +12,22 @@ class ServiceProvider extends Provider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/config.php' => config_path('json-schema-assertions.php'),
+            ], 'config');
+        }
+
         TestResponse::macro('assertJsonSchema', function ($schema) {
             (new SchemaAssertion($schema))->assert($this->content());
         });
+    }
+
+    /**
+     * Register the application services.
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'json-schema-assertions');
     }
 }
