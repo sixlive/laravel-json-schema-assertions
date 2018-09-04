@@ -20,6 +20,7 @@ class ServiceProvider extends Provider
 
         TestResponse::macro('assertJsonSchema', function ($schema) {
             (new SchemaAssertion($schema))->assert($this->content());
+            return $this;
         });
     }
 
