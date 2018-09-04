@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.4.0] - 2018-09-04
+### Added
+* Support for chainable assertions ([#6](https://github.com/sixlive/laravel-json-schema-assertions/pull/6))
+
 ## [0.3.0] - 2018-07-22
 ### Added
 * Support for resolving schemas using a config base path
