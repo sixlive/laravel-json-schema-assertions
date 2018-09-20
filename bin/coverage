@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ $1 = 'report' ]]; then
     wget https://scrutinizer-ci.com/ocular.phar
