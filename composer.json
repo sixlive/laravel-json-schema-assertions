@@ -21,7 +21,7 @@
     "require": {
         "php": "^7.1|^7.2",
         "swaggest/json-schema": "^0.12.0",
-        "phpunit/phpunit": "^7.0",
+        "phpunit/phpunit": "^6.5|^7.0",
         "Illuminate/Support": ">=5.5 <5.8"
     },
     "require-dev": {
