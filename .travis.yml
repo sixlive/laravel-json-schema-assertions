@@ -50,4 +50,4 @@ script:
   - vendor/bin/phpunit
 
 after_success:
-  - if [[ $COVERAGE = 1 ]]; then ./bin/coverage report; fi
+  - if [[ $COVERAGE = 1 ]]; then bin/coverage report; fi
