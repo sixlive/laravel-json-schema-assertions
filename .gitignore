@@ -1,5 +1,4 @@
-build
+build/
 composer.lock
-docs
-vendor
-coverage
+vendor/
+coverage/
