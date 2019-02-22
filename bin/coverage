@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ $1 = 'report' ]]; then
+    wget https://scrutinizer-ci.com/ocular.phar
+    php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+fi
