@@ -20,9 +20,9 @@
     ],
     "require": {
         "php": "^7.1|^7.2",
-        "swaggest/json-schema": "^0.12.0",
         "phpunit/phpunit": "^6.5|^7.0",
-        "Illuminate/Support": ">=5.5"
+        "Illuminate/Support": ">=5.5",
+        "sixlive/json-schema-assertions": "^1.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.12",
