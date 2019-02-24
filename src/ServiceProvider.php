@@ -3,7 +3,9 @@
 namespace sixlive\Laravel\JsonSchemaAssertions;
 
 use Illuminate\Foundation\Testing\TestResponse;
+use sixlive\JsonSchemaAssertions\SchemaAssertion;
 use Illuminate\Support\ServiceProvider as Provider;
+use Illuminate\Support\Facades\Config;
 
 class ServiceProvider extends Provider
 {
@@ -19,7 +21,11 @@ class ServiceProvider extends Provider
         }
 
         TestResponse::macro('assertJsonSchema', function ($schema) {
-            (new SchemaAssertion($schema))->assert($this->content());
+            $basePath = Config::get('json-schema-assertions.schema_base_path');
+
+            (new SchemaAssertion($basePath))
+              ->schema($schema)
+              ->assert($this->content());
 
             return $this;
         });
