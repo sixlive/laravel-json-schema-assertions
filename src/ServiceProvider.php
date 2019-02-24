@@ -2,10 +2,10 @@
 
 namespace sixlive\Laravel\JsonSchemaAssertions;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Foundation\Testing\TestResponse;
 use sixlive\JsonSchemaAssertions\SchemaAssertion;
 use Illuminate\Support\ServiceProvider as Provider;
-use Illuminate\Support\Facades\Config;
 
 class ServiceProvider extends Provider
 {
