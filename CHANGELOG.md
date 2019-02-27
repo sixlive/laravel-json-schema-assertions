@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-02-27
+### Added
+* Larave 5.8 to the CI process ([#13](https://github.com/sixlive/laravel-json-schema-assertions/pull/13))
+
+### Changed
+* Added a return type hint to `setUp` required by phpunit 8 and Laravel's test case ([#13](https://github.com/sixlive/laravel-json-schema-assertions/pull/13))
+
+
+## [1.0.0] - 2019-02-24
+### Changed
+* Updated to use [sixlive/json-schema-assertions](https://github.com/sixlive/json-schema-assertions) under the hood ([#11](https://github.com/sixlive/laravel-json-schema-assertions/pull/11)]
+
 ## [0.4.0] - 2018-09-04
 ### Added
 * Support for chainable assertions ([#6](https://github.com/sixlive/laravel-json-schema-assertions/pull/6))
