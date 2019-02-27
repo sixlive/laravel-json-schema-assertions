@@ -7,7 +7,7 @@ use PHPUnit\Framework\AssertionFailedError;
 
 class AssertResponseTest extends TestCase
 {
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
 
