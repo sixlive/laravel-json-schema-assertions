@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "phpunit/phpunit": "^6.3|^7.0",
+        "phpunit/phpunit": "^6.3|^7.0|^8.0",
         "illuminate/support": ">=5.5",
         "sixlive/json-schema-assertions": "^1.0"
     },
