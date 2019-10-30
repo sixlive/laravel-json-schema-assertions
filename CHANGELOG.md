@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [2.0.0] - 2019-10-30
+### Changed
+* Removed Laravel 5 support, added Laravel 6 support ([#15](https://github.com/sixlive/laravel-json-schema-assertions/pull/15))
+
+## [1.2.0] - 2019-10-30
+### Added
+* Added support for PHPUnit 8 ([#14](https://github.com/sixlive/laravel-json-schema-assertions/pull/14))
+
 ## [1.1.0] - 2019-02-27
 ### Added
 * Larave 5.8 to the CI process ([#13](https://github.com/sixlive/laravel-json-schema-assertions/pull/13))
