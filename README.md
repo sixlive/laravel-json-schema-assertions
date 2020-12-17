@@ -2,9 +2,6 @@
 
 [![Packagist Version](https://img.shields.io/packagist/v/sixlive/laravel-json-schema-assertions.svg?style=flat-square)](https://packagist.org/packages/sixlive/laravel-json-schema-assertions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/sixlive/laravel-json-schema-assertions.svg?style=flat-square)](https://packagist.org/packages/sixlive/laravel-json-schema-assertions)
-[![Travis](https://img.shields.io/travis/sixlive/laravel-json-schema-assertions.svg?style=flat-square)](https://travis-ci.org/sixlive/laravel-json-schema-assertions)
-[![Code Quality](https://img.shields.io/scrutinizer/g/sixlive/laravel-json-schema-assertions.svg?style=flat-square)](https://scrutinizer-ci.com/g/sixlive/laravel-json-schema-assertions/)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/sixlive/laravel-json-schema-assertions.svg?style=flat-square)](https://scrutinizer-ci.com/g/sixlive/laravel-json-schema-assertions/)
 [![StyleCI](https://github.styleci.io/repos/139347110/shield)](https://github.styleci.io/repos/139347110)
 
 JSON Schema schema assertions for Laravel test responses. Uses [swaggest/php-json-schema](https://github.com/swaggest/php-json-schema) under the hood.
