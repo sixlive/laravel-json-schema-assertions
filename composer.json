@@ -20,13 +20,13 @@
     ],
     "require": {
         "php": "^8.0",
-        "phpunit/phpunit": "^8.0|^9.0",
-        "illuminate/support": "^7.0|^8.0",
+        "phpunit/phpunit": "^9.0",
+        "illuminate/contracts": "^8.36",
         "sixlive/json-schema-assertions": "^1.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.2",
-        "orchestra/testbench": "^5.0|^6.0"
+        "orchestra/testbench": "^6.5"
     },
     "autoload": {
         "psr-4": {
