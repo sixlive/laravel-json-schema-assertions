@@ -22,7 +22,7 @@
         "php": "^8.0",
         "phpunit/phpunit": "^9.0",
         "illuminate/contracts": "^8.36",
-        "sixlive/json-schema-assertions": "^1.2"
+        "sixlive/json-schema-assertions": "^2.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.2",
