@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "phpunit/phpunit": "^9.0",
+        "phpunit/phpunit": "^9.5",
         "illuminate/contracts": "^8.36",
         "sixlive/json-schema-assertions": "^2.0"
     },
