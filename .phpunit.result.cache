@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"Tests\\AssertResponseTest::valid_schema_passes_as_json":0.037,"Tests\\AssertResponseTest::valid_schema_passes_as_array":0.004,"Tests\\AssertResponseTest::valid_schema_passes_as_file_path":0.004,"Tests\\AssertResponseTest::invalid_schema_fails_with_message":0.004,"Tests\\AssertResponseTest::valid_schema_passes_as_config_path":0.004}}
