@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "laravel/framework": "8.*",
+        "laravel/framework": "8.50",
         "phpunit/phpunit": "^9.5",
         "sixlive/json-schema-assertions": "^2.0"
     },
