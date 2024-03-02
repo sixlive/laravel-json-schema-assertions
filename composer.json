@@ -20,13 +20,13 @@
     ],
     "require": {
         "php": "^8.0",
-        "laravel/framework": "^8.70|^9.0|^10.0",
+        "laravel/framework": "^8.70|^9.0|^10.0|^11.0",
         "phpunit/phpunit": "^9.5|^10.0",
         "sixlive/json-schema-assertions": "^2.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.2",
-        "orchestra/testbench": "^6.20|^8.0"
+        "orchestra/testbench": "^6.20|^8.0|^9.0"
     },
     "autoload": {
         "psr-4": {
