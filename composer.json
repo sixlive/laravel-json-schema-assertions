@@ -21,7 +21,7 @@
     "require": {
         "php": "^8.0",
         "laravel/framework": "^8.70|^9.0|^10.0|^11.0",
-        "phpunie/phpunit": "^9.5|^10.0|^11.0",
+        "phpunit/phpunit": "^9.5|^10.0|^11.0",
         "sixlive/json-schema-assertions": "^2.0"
     },
     "require-dev": {
