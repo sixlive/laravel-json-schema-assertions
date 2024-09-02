@@ -18,8 +18,7 @@ class AssertResponseTest extends TestCase
         });
     }
 
-    /** @test */
-    public function valid_schema_passes_as_json()
+    public function test_valid_schema_passes_as_json()
     {
         $schema = [
             'type' => 'object',
@@ -36,8 +35,7 @@ class AssertResponseTest extends TestCase
         $this->get('foo')->assertJsonSchema(json_encode($schema));
     }
 
-    /** @test */
-    public function valid_schema_passes_as_array()
+    public function test_valid_schema_passes_as_array()
     {
         $schema = [
             'type' => 'object',
@@ -54,15 +52,13 @@ class AssertResponseTest extends TestCase
         $this->get('foo')->assertJsonSchema($schema);
     }
 
-    /** @test */
-    public function valid_schema_passes_as_file_path()
+    public function test_valid_schema_passes_as_file_path()
     {
         $this->get('foo')
-             ->assertJsonSchema(__DIR__.'/Support/Schemas/foo.json');
+            ->assertJsonSchema(__DIR__.'/Support/Schemas/foo.json');
     }
 
-    /** @test */
-    public function invalid_schema_fails_with_message()
+    public function test_invalid_schema_fails_with_message()
     {
         $this->expectException(AssertionFailedError::class);
 
@@ -81,8 +77,7 @@ class AssertResponseTest extends TestCase
         $this->get('foo')->assertJsonSchema(json_encode($schema));
     }
 
-    /** @test */
-    public function valid_schema_passes_as_config_path()
+    public function test_valid_schema_passes_as_config_path()
     {
         $this->get('foo')->assertJsonSchema('foo');
     }
